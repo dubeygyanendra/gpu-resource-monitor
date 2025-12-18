@@ -1,0 +1,54 @@
+{
+  "name": "gpu-resource-monitor",
+  "displayName": "GPU & System Monitor",
+  "description": "Live GPU, CPU, RAM, Disk monitoring with charts, alerts, Prometheus, NVIDIA & AMD support",
+  "version": "1.0.0",
+  "publisher": "YOUR_PUBLISHER",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "activationEvents": ["*"],
+  "main": "./out/extension.js",
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "gpuMonitorContainer",
+          "title": "GPU Monitor",
+          "icon": "media/icon.png"
+        }
+      ]
+    },
+    "views": {
+      "gpuMonitorContainer": [
+        {
+          "id": "gpuMonitorView",
+          "name": "GPU & System Monitor",
+          "type": "webview"
+        }
+      ]
+    },
+    "configuration": {
+      "type": "object",
+      "title": "GPU & System Monitor",
+      "properties": {
+        "gpuMonitor.alertGpu": { "type": "number", "default": 90 },
+        "gpuMonitor.alertVram": { "type": "number", "default": 90 },
+        "gpuMonitor.alertTemp": { "type": "number", "default": 85 },
+        "gpuMonitor.enablePrometheus": {
+          "type": "boolean",
+          "default": false,
+          "description": "Enable Prometheus endpoint on port 9100"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "compile": "tsc -p ./"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0",
+    "@types/node": "^18.0.0",
+    "@types/vscode": "^1.80.0"
+  }
+}
