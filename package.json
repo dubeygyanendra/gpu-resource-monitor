@@ -3,7 +3,7 @@
   "displayName": "GPU & System Monitor",
   "description": "Live GPU, CPU, RAM, Disk monitoring with charts, alerts, Prometheus, NVIDIA & AMD support",
   "version": "1.0.0",
-  "publisher": "YOUR_PUBLISHER",
+  "publisher": "dubeygyanendra",
   "engines": {
     "vscode": "^1.80.0"
   },
